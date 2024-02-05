@@ -124,5 +124,11 @@ pipeline{
                }
             }
         }
+        stage('Run container'){
+          when { expression { params.action == 'create'}}    
+            steps{
+                runContainer()
+            }
+        }
     }
 }
